@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/styles/dashboard.css">
+</head>
+<body>
+    <%- include("../../layout/flash") %>
+    <%- include("../../layout/header") %>
+
+
+    <div class="container">
+        <div class="sidebar">
+            <%- include("../../layout/sidebar") %>
+        </div>
+        <div class="dashboard">
+            <div class="acitivity">
+                <div class="my-post">
+                    <h1>My latest posts</h1>
+                    <div class="wrapper">
+                        <% if(profile.posts.length > 0) { %>
+                            <% profile.posts.forEach((post)=> { %>
+                                <div class="post-item">
+                                    <div class="post-img">
+                                        <img src="/uploads/<%= post.thumbnail %>" alt="">
+                                    </div>
+                                    <div class="details">
+                                        <div class="title">
+                                            <a href="/post/explore/<%= post._id %>"><%= post.title %></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            <% }) %>
+                        <% } else { %>
+                            <p class="null-post">Nothing to show!</p>
+                        <% } %>
+                    </div>
+                </div>
+                <div class="my-bookmarks">
+                    <h1>My Bookmarks</h1>
+                    <div class="wrapper">
+                        <% if(profile.bookmarks.length > 0) { %>
+                            <% profile.bookmarks.forEach((post)=> { %>
+                                <div class="post-item">
+                                    <div class="post-img">
+                                        <img src="/uploads/<%= post.thumbnail %>" alt="">
+                                    </div>
+                                    <div class="details">
+                                        <div class="title">
+                                            <a href="/post/explore/<%= post._id %>"><%= post.title %></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            <% }) %>
+                        <% } else { %>
+                            <p class="null-post">Nothing to show!</p>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>      
+    </div>
+        
+    <%- include("../../layout/footer") %>
+</body>
+</html>

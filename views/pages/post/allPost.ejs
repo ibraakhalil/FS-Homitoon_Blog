@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <link rel="stylesheet" href="/styles/my-post.css">
+</head>
+<body>
+    <%- include("../../layout/flash") %>
+    <%- include("../../layout/header") %>
+
+    
+    <section class="container">
+        <div class="my-post">
+            <h1><span>All Posts</span></h1>
+            <div class="filter-post">
+                <a href="/post?filter=latest">
+                    <button class="<%= filter==='latest' ? 'btn-active' : '' %>">Latest</button>
+                </a>
+                <a href="/post?filter=week">
+                    <button class="<%= filter==='week' ? 'btn-active' : '' %>">Week</button>
+                </a>
+                <a href="/post?filter=month">
+                    <button class="<%= filter==='month' ? 'btn-active' : '' %>">Month</button>
+                </a>
+                <a href="/post?filter=all">
+                    <button class="<%= filter==='all' ? 'btn-active' : '' %>">All</button>
+                </a>
+            </div>
+            <div class="wrapper">
+                <% posts.forEach((post, index) => { %>
+                    <div class="post-item">
+                        <div class="post-img">
+                            <img src="/uploads/<%= post.thumbnail %>" alt="">
+                        </div>
+                        <div class="details">
+                            <div class="title">
+                                <%= post.title %>
+                            </div>
+                            <div class="wrapper">
+                                <div style="width: 100%;">
+                                    <small class="author">
+                                        <span> <%= moment(post.createdAt) %>, </span> 
+                                         Author
+                                        <a href="/author/<%= post.author._id %>"> <%= post.author.name %></a> 
+                                    </small>
+                                    <div class="read-more">
+                                        <a href="/post/explore/<%= post._id %>">Read More....</a>
+                                        <span> ( <%= post.comments.length %>  Comments )</span>
+                                    </div>
+                                </div>
+                                <% if(user) { %>
+                                    <div class="bookmark" data-post="<%= post._id %>">
+                                        <% if(!bookmarks.includes(post._id)) { %>
+                                            &#9734;
+                                        <% } else { %>
+                                            &#9733;
+                                        <% } %>
+                                    </div>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+            <div class="pagination">
+                <% if(totalPage > 1) { %>
+                    <% for(let i=1; i < totalPage+1; i++) { %>
+                        <a href="/post?filter=<%=filter%>&page=<%= i %>">
+                            <button class="<%= pageNumber == i ? 'btn-active' : '' %>"><%= i %></button>
+                        </a>
+                    <% } %>
+                <% } %>
+            </div>
+        </div>     
+    </section>
+        
+    <%- include("../../layout/footer") %>
+<script src="/scripts/bookmark.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+@import url(utility.css);
+@import url(layout.css);
+
+
+
+
+.my-comments {
+	flex: 4;
+}
+.my-comments h1 {
+	border-bottom: 1px solid #e8dbdb;
+	margin-bottom: 2rem;
+	padding: 0;
+	padding-bottom: 0.5rem;
+}
+.comment-item {
+	background: #ddd;
+	padding: 1rem;
+	margin-bottom: 1px;
+}
+.comment-body p {
+	margin-left: 3rem;
+	font-size: 13px;
+	color: #444;
+	padding: 0.5rem 0;
+}
+.comment-item .post-link a {
+	font-size: 14px;
+}
+
+.comment-item .post-link span {
+	font-size: 12px;
+	padding-left: 4px;
+	color: #444;
+	font-weight: 300;
+}

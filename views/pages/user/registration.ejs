@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/auth.css">
+</head>
+<body>
+    <%- include("../../layout/flash") %>
+    <%- include("../../layout/header") %>
+
+    <div class="container">
+        <form action="/auth/register" method="post">
+            <div class="header">
+                <h2>Registration</h2>
+            </div>
+            <div class="form-group">
+                <label for="name">Name : </label>
+                <input type="text" name="name" value="<%= value.name %>" required >
+                <div class="error-fedback">
+                    <p> <%= error.name %> </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email : </label>
+                <input type="email" name="email" value="<%= value.email %>" required>
+                <div class="error-fedback">
+                    <p> <%= error.email %> </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password : </label>
+                <input type="password" name="password" required>
+                <div class="error-fedback">
+                    <p> <%= error.password %> </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="confirmPass">Confirm Password : </label>
+                <input type="password" name="confirmPass">
+                <div class="error-fedback">
+                    <p> <%= error.password ? "" : error.confirmPass %> </p>
+                </div>
+            </div>
+            <button type="submit">Registration</button>
+        </form>        
+    </div>
+        
+    <%- include("../../layout/footer") %>
+</body>
+</html>

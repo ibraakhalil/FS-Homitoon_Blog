@@ -1,0 +1,42 @@
+@import url(layout.css);
+@import url(utility.css);
+
+.header {
+	margin-bottom: 2rem;
+}
+
+form {
+	flex: 3;
+}
+.form-group {
+	margin-bottom: 1rem;
+	display: flex;
+	flex-direction: column;
+	width: 40%;
+}
+
+.form-group label {
+	width: 160px;
+	display: inline-block;
+	margin-top: 1rem;
+	margin-bottom: 3px;
+}
+.form-group input {
+	height: 40px;
+}
+.upload .user-image {
+	width: 100px;
+	margin: 1rem 0;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.upload label {
+	background: #12335e;
+	padding: 5px;
+	cursor: pointer;
+	color: white;
+	border-radius: 4px;
+}
+
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Post</title>
+    <link rel="stylesheet" href="/styles/my-post.css">
+</head>
+<body>
+    <%- include("../../layout/flash") %>
+    <%- include("../../layout/header") %>
+
+    <section class="container">
+        <div class="sidebar">
+            <%- include("../../layout/sidebar") %>
+        </div>
+        <div class="my-post">
+            <h1><span>My All Posts</span></h1>
+            <div class="wrapper">
+                <% posts.forEach((post, index) => { %>
+                    <div class="post-item">
+                        <div class="post-img">
+                            <img src="/uploads/<%= post.thumbnail %>" alt="">
+                        </div>
+                        <div class="details">
+                            <div class="title">
+                                <%= post.title %>
+                            </div>
+                            <div class="read-more">
+                                <p class="author">
+                                    <%= post.author.name %>
+                                </p>
+                                <a href="/post/explore/<%= post._id %>">Read More....</a>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>     
+    </section>
+        
+    <%- include("../../layout/footer") %>
+
+</body>
+</html>

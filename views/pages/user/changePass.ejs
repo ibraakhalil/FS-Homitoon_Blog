@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Password</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/auth.css">
+</head>
+<body>
+    <%- include("../../layout/flash") %>
+    <%- include("../../layout/header") %>
+
+    <div class="container">
+        <div class="sidebar">
+            <%- include("../../layout/sidebar") %>
+        </div>
+        <form action="/auth/change-password" method="post">
+            <div class="header">
+                <h2>Change you password</h2>
+            </div>
+            <div class="form-group">
+                <label for="oldPassword">Existing Password : </label>
+                <input type="password" name="oldPassword" required >
+                <div class="error-fedback">
+                    <p> <%= error.oldPassword %> </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="newPassword">New Password : </label>
+                <input type="password" name="newPassword" required>
+                <div class="error-fedback">
+                    <p> <%= error.newPassword %> </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="confirmPass">Confirm Password : </label>
+                <input type="password" name="confirmPass">
+                <div class="error-fedback">
+                    <p> <%= error.confirmPass %> </p>
+                </div>
+            </div>
+            <button type="submit">Submit</button>
+        </form>        
+    </div>
+        
+    <%- include("../../layout/footer") %>
+</body>
+</html>

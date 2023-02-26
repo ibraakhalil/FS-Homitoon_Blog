@@ -1,0 +1,34 @@
+
+<div class="wrapper">
+    <ul>
+        <li>
+            <a class="<%= url === '/dashboard' ? 'active' : '' %>" href="/dashboard">Dashboard</a>
+        </li>
+        <li>
+            <a class="<%= url=== '/profile' ? 'active' : '' %>" href="/profile">Profile</a>
+        </li>
+        <li>
+            <a class="<%= url === '/profile/edit-profile' ? 'active' : '' %>" href="/profile/edit-profile">Edit Profile</a>
+        </li>
+        <li>
+            <a class="<%= url === '/auth/change-password' ? 'active' : '' %>" href="/auth/change-password">Change Password</a>
+        </li>
+        <li>
+            <a class="<%= url === '/post' ? 'active' : '' %>" href="/post">All Post</a>
+        </li>
+        <li>
+            <a class="<%= url === '/post/my-post' ? 'active' : '' %>" href="/post/my-post">My Post</a>
+        </li>
+        <li>
+            <a class="<%= url === '/post/create' ? 'active' : '' %>" href="/post/create">Create Post</a>
+        </li>
+        <li>
+            <a class="<%= url === '/comment/my-comments' ? 'active' : '' %>" href="/comment/my-comments">Comments</a>
+        </li>
+
+
+        <li>
+            <a style="color:red; font-weight:bold;" href="/auth/logout">Logout  &longrightarrow;</a>
+        </li>
+    </ul>
+</div>

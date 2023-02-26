@@ -1,0 +1,32 @@
+
+<nav>
+    <div class="container">
+        <div class="wrapper">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/post">Blog</a></li>
+                <% if(user) { %>
+                    <% if(profile) { %>
+                        <li><a href="/dashboard">Dashboard</a></li>
+                    <% } %>
+                <% } else { %>
+                    <li><a href="/auth/login">Login</a></li>
+                    <li><a href="/auth/register">Registration</a></li>               
+                <% } %>
+            </ul>
+            <div>
+                <div class="search">
+                    <form action="/search" method="GET">
+                        <input type="text" name="term" placeholder="Search...">
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
+                <% if(user) { %>
+                    <div class="user-image">
+                        <img src="/uploads/<%= profile ? user.profilePic : "default.png" %>" alt="image">
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</nav>

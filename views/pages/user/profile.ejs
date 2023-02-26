@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/profile.css">
+</head>
+<body>
+    <%- include("../../layout/flash") %>
+    <%- include("../../layout/header") %>
+
+
+    <div class="container">
+        <div class="sidebar">
+            <%- include("../../layout/sidebar") %>
+        </div>
+        <div class="profile">
+            <div class="top">
+                <div class="wrapper">
+                    <div class="left">
+                        <div class="user-img">
+                            <img src="/uploads/<%= profile.profilePic %>" alt="profile-picture">
+                        </div>
+                        <div class="user-description">
+                            <div class="name">
+                                <h2><%= profile.name %></h2>
+                            </div>
+                            <div class="title">
+                                <p><%= profile.title %></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+
+                    </div>
+                </div>
+            </div>
+            <div class="profile-info">
+                <p>
+                    <strong>Email</strong>
+                    <span>
+                        <%= user.email %>
+                        <a href="/profile/edit-profile">&#9998;</a>
+                    </span>
+                </p>
+                <p>
+                    <strong>Website</strong>
+                    <span>
+                        <%= profile.links.website %>
+                        <a href="/profile/edit-profile">&#9998;</a>
+                    </span>
+                </p>
+                <p>
+                    <strong>Facebook</strong>
+                    <span>
+                        <%= profile.links.facebook %>
+                        <a href="/profile/edit-profile">&#9998;</a>
+                    </span>
+                </p>
+                <p>
+                    <strong>Github</strong>
+                    <span>
+                        <%= profile.links.github %>
+                        <a href="/profile/edit-profile">&#9998;</a>
+                    </span>
+                </p>
+                <p>
+                    <strong>Twitter</strong>
+                    <span>
+                        <%= profile.links.twitter %>>
+                        <a href="/profile/edit-profile">&#9998;</a>
+                    </span>
+                </p>
+            </div>
+        </div>      
+    </div>
+        
+    <%- include("../../layout/footer") %>
+</body>
+</html>

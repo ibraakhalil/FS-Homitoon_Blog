@@ -1,0 +1,37 @@
+@import url(utility.css);
+@import url(layout.css);
+
+.index-container {
+    width: 550px;
+    margin: 0 auto;
+}
+
+.index-post > h1 {
+	margin-bottom: 2rem;
+	border-bottom: 1px solid #dfd1d1;
+}
+.index-post .post-item {
+	padding: 1rem;
+	background: #ddd;
+	margin-bottom: 2px;
+}
+.index-post .title h3 {
+	font-weight: 500;
+}
+.index-post .body {
+	margin: 1rem 0;
+	font-size: 14px;
+	font-weight: 400;
+}
+.index-post .read-more {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 13px;
+	color: #6c6c6c;
+}
+.index-post .author a {
+	color: #3379ff;
+	text-transform: capitalize;
+}
+

@@ -1,0 +1,57 @@
+@import url(layout.css);
+
+
+.profile {
+	flex: 4;
+}
+.profile .top {
+	background: #eee;
+}
+.profile .top .left {
+	display: flex;
+    align-items: center;
+}
+.profile .user-img {
+	width: 125px;
+	height: 125px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 1rem;
+}
+.profile .top .left .name h2 {
+	text-transform: uppercase;
+	font-size: 28px;
+}
+.profile .top .left .title p {
+	font-size: 14px;
+	text-transform: capitalize;
+	color: #4f4f4f;
+}
+
+.profile-info {
+	margin-top: 3rem;
+}
+.profile-info p {
+	background: #ddd;
+	margin-bottom: 1px;
+	padding: 1rem;
+	text-transform: capitalize;
+	display: flex;
+	align-items: center;
+}
+.profile-info span {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.profile-info span a {
+	font-size: 20px;
+	margin-right: 0.5rem;
+}
+.profile-info p strong {
+	width: 140px;
+	display: inline-block;
+	border-right: 1px solid #c1c1c1;
+	margin-right: 1rem;
+}

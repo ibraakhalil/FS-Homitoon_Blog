@@ -1,0 +1,61 @@
+@import url(./my-post.css);
+
+.social-links ul {
+	display: flex;
+	justify-content: space-between;
+}
+.author-details {
+	padding: 2rem;
+	background: white;
+	min-height: 100vh;
+	position: sticky;
+	top: 17px;
+}
+.img {
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+	border-radius: 50%;
+	margin: 0 auto;
+}
+.description  {
+	text-align: center;
+}
+.description p {
+	margin: 1rem 0px;
+	text-transform: capitalize;
+	font-weight: 300;
+}
+.description .name {
+	font-size: 32px;
+	text-transform: uppercase;
+	font-weight: 500;
+	border-bottom: 1px solid #f4ebeb;
+	margin-bottom: 0;
+}
+.description .title {
+	color: gray;
+	margin-top: 7px;
+}
+.description .bio {
+	color: gray;
+}
+.social-links {
+	margin-top: 3rem;
+}
+.author-post {
+	padding: 0rem 3rem;
+	flex: 2;
+}
+.post-img img {
+	width: 60%;
+}
+.post-item {
+	margin-bottom: 2rem;
+	padding: 1rem 2rem;
+}
+.post-item .details > .wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}

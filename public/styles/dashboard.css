@@ -1,0 +1,27 @@
+@import url(utility.css);
+@import url(layout.css);
+@import url(my-post.css);
+
+
+.dashboard {
+    flex: 4;
+}
+.post-item .details {
+    min-height: auto;
+}
+.post-item  .title {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.my-bookmarks {
+	margin-top: 3rem;
+}
+.my-bookmarks > h1 {
+	border-bottom: 1px solid #80808024;
+	padding: 1rem 0rem;
+	margin-bottom: 3rem;
+}
+
+
+

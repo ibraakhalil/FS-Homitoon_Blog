@@ -1,0 +1,103 @@
+@import url(utility.css);
+@import url(layout.css);
+
+
+.filter-post {
+	margin-bottom: 3rem;
+	margin-top: -2rem;
+}
+
+.my-post {
+	flex: 4;
+}
+.my-post > .wrapper, .my-bookmarks > .wrapper {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 2rem;
+}
+.null-post {
+	color: gray;
+	font-weight: 300;
+}
+.my-post.index-post {
+	width: 50% !important;
+}
+
+.my-post h1 {
+	border-bottom: 1px solid #80808024;
+	margin-bottom: 3rem;
+	padding-bottom: 0.5rem;
+}
+
+.post-item {
+	background: #fff6f6;
+	overflow: hidden;
+	padding: 1rem;
+}
+ .post-item .post-img {
+	height: 200px;
+}
+.post-item .details {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 150px;
+	padding-top: 1rem;
+}
+.my-post .post-item .details > .wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: last baseline;
+}
+.read-more {
+	display: flex;
+	justify-content: space-between;
+	font-size: 14px;
+	color: gray;
+	margin-top: 3px;
+	align-items: center;
+}
+.read-more span {
+	font-size: 12px;
+	font-weight: 300;
+}
+
+.bookmark {
+	width: 20px;
+	height: 20px;
+	font-size: 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+.pagination {
+	margin-top: 3rem;
+	text-align: center;
+}
+
+.search-item {
+	margin-bottom: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

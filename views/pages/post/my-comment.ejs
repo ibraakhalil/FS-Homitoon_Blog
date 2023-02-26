@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Comment</title>
+    <link rel="stylesheet" href="/styles/my-comment.css">
+</head>
+<body>
+    <%- include("../../layout/flash") %>
+    <%- include("../../layout/header") %>
+
+    <section class="container">
+        <div class="sidebar">
+            <%- include("../../layout/sidebar") %>
+        </div>
+        <div class="my-comments">
+            <h1><span>My All Comment</span></h1>
+            <div class="wrapper">
+                <% comments.reverse().forEach((comment, index) => { %>
+                    <div class="comment-item">
+                        <div class="post-link">
+                            <p>
+                                Post 
+                                <a href="/post/explore/<%= comment.post._id %>">
+                                    <%= comment.post.title.substring(0,30).trim()+'.... '%>
+                                </a>
+                                comment
+                                <span>
+                                   <%= moment(comment.createdAt) %> 
+                                </span>
+                                
+                            </p>
+                        </div>
+                        <div class="comment-body">
+                            <p>
+                                "<%= comment.body %>"
+                            </p>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>     
+    </section>
+        
+    <%- include("../../layout/footer") %>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" href="/styles/my-post.css">
+</head>
+<body>
+    <%- include("../../layout/flash") %>
+    <%- include("../../layout/header") %>
+
+    
+    <section class="container">
+        <div class="my-post">
+            <h1><span>Search for <%= term %></span></h1>
+            <% if(posts.length === 0) { %>
+                <p>Nothing to show</p>
+            <% } else { %>
+                <div class="search-wrapper">
+                   <% posts.forEach((post) => { %>
+                        <div class="search-item">
+                            <a href="/post/explore/<%= post._id %>">
+                                <%= post.title %>
+                            </a>
+                            <p><%= extractText(post.body) %></p>
+                        </div>
+                   <% }) %>
+                </div>
+            <% } %>
+            <div class="pagination">
+                <% if(totalPage > 1) { %>
+                    <% for(let i=1; i < totalPage+1; i++) { %>
+                        <a href="/search?term=<%=term%>&page=<%= i %>">
+                            <button class="<%= currentPage == i ? 'btn-active' : '' %>"><%= i %></button>
+                        </a>
+                    <% } %>
+                <% } %>
+            </div>
+        </div>     
+    </section>
+        
+    <%- include("../../layout/footer") %>
+<script src="/scripts/bookmark.js"></script>
+</body>
+</html>
