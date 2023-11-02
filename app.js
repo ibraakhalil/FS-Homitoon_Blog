@@ -5,10 +5,11 @@ const middleware = require("./middlewares/middleware")
 const router = require("./routes/router")
 const app = express()
 const port = process.env.PORT || 5500
+const path = require('path')
 
 
-app.set("view engine", "ejs")
-app.set("views", "views")
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
 app.use(middleware)
 app.use(router) 
