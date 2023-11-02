@@ -9,6 +9,7 @@ const port = process.env.PORT || 5500
 
 app.set("view engine", "ejs")
 app.set("views", "views")
+
 app.use(middleware)
 app.use(router) 
 
